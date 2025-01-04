@@ -13,9 +13,7 @@ public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode slow = headA;
         ListNode fast = headB;
-         if (headA == null || headB == null) {
-            return null;
-        }
+        
         
         while(fast!=slow)
         {
