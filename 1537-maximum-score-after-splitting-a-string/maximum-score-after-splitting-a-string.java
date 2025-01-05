@@ -1,25 +1,21 @@
 class Solution {
     public int maxScore(String s) {
-        int n=s.length();        
-        int maxScore=0;
-        int cntZero=0;
-        int cntOne=0;
+        int ans = 0;
+        int n = s.length();
+        int zero = 0;
 
-        
-        for(char ch:s.toCharArray()){
-            if(ch=='1') cntOne++;
+        for (int i = 0; i < n - 1; i++) {
+            if (s.charAt(i) == '0') {
+                zero++;
+            }
+            int one = 0;
+            for (int j = i + 1; j < n; j++) {
+                if (s.charAt(j) == '1') {
+                    one++;
+                }
+            }
+            ans = Math.max(ans, one + zero);
         }
-
-        
-        for(int i=0; i<n-1; i++){
-            if(s.charAt(i)=='1') cntOne--;
-            else cntZero++;
-            
-            
-            maxScore=Math.max(maxScore, cntZero+cntOne);
-        }
-
-
-        return maxScore;
+        return ans;
     }
 }
