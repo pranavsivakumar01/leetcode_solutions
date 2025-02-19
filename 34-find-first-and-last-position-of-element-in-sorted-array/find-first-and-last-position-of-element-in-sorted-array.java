@@ -6,7 +6,7 @@ class Solution {
         result[1] = -1;
 
         if (nums.length < 1) {
-            return result;  // Return [-1, -1] if array is empty
+            return result;  
         }
         
         
